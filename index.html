@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Pong</title>
     <link href="css.css" type="text/css" rel="stylesheet" media="screen">
 </head>
 <body>
-    <h1><strong>Инициация итогового проекта</strong></h1>
+    <!-- <h1><strong>Инициация итогового проекта</strong></h1>
     <table>
         <tbody>
             <tr class="header">
@@ -45,8 +45,26 @@
     <div>Игрок может котроллировать положение ракетки по вертикали (вверх и вниз), чтобы отбивать мяч.</div>
     <div>Цель игры - не дать мячу пройти за пределы поля со своей стороны.</div>
     <div>Если мяч пройдет за пределы поля игрока, то противник получает очко.</div>
-    <div>Для ведения таблицы рекордов игра будет записывать количество очков, которое пользователь смог получить, не пропуская мяч за пределы своего поля.</div>
+    <div>Для ведения таблицы рекордов игра будет записывать количество очков, которое пользователь смог получить, не пропуская мяч за пределы своего поля.</div> -->
 
+    <div id="container">
+        <canvas id="pong-game" width="800" height="600"></canvas>
+        <div id="controls">
+            <button id="start-game">Начать игру</button>
+            <button id="easy">Легкий</button>
+            <button id="medium">Средний</button>
+            <button id="hard">Сложный</button>
+            <select id="color-scheme">
+                <option value="default">Обычная</option>
+                <option value="light">Темная</option>
+                <option value="dark">Светлая</option>
+            </select>
+        </div>
+        <div id="scores">
+            <h2>Рекорды</h2>
+            <ul id="score-list"></ul>
+        </div>
+    </div>
+    <script src="script.js"></script>
 </body>
-
 </html>

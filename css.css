@@ -1,4 +1,4 @@
-table {
+/* table {
     width: 100%;
     border-collapse: collapse;
 }
@@ -14,4 +14,29 @@ tbody tr:nth-child(odd) {
 td, th {
     padding: 8px;
     border: 1px solid #ddd;
+} */
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: aqua;
+}
+
+#container{
+    text-align: center;
+}
+
+#pong-game{
+    border: 2px solid #000;
+}
+
+#controls {
+    margin: 10px;
+}
+
+#scores {
+    margin-top: 20px;
 }
