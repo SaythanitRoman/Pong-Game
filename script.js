@@ -11,11 +11,9 @@ let paddleWidth = 10;
 let ballRadius = 10;
 let playerScore = 0;
 let ballX, ballY, ballSpeedX, ballSpeedY;
+let playerY = canvas.height / 2;
 let isGameRunning = false;
 let difficulty = 'medium';
-
-
-context.fillStyle = 'red';
 
 
 const setDifficulty = (level) => {
@@ -29,23 +27,39 @@ const startGame = () => {
     isGameRunning = true;
     ballX = canvas.width / 2;
     ballY = canvas.height / 2;
+    playerY = canvas.height / 2;;
     setDifficulty(difficulty);
     playerScore = 0;
     requestAnimationFrame(gameLoop);
 };
 
+
+
 const gameLoop = () => {
     if (!isGameRunning) return;
 
     context.clearRect(0, 0, canvas.width, canvas.height);
+    drawPaddle();
     drawBall();
     updateBall();
 
     requestAnimationFrame(gameLoop);
 };
 
+canvas.addEventListener('mousemove', (e) => {
+    const relativeY = e.clientY - canvas.getBoundingClientRect().top;
+    if (relativeY > 0 && relativeY < canvas.height - paddleHeight) {
+        playerY = relativeY;
+    }
+});
+
+const drawPaddle = () => {
+    context.fillStyle = 'black';
+    context.fillRect(0, playerY, paddleWidth, paddleHeight);
+};
 
 const drawBall = () => {
+    context.fillStyle = 'red';
     context.beginPath();
     context.arc(ballX, ballY, ballRadius, 0, Math.PI * 2);
     context.fill();
@@ -64,7 +78,12 @@ const updateBall = () => {
     // Проверка столкновения мяча с стенкой игрока
     if (ballX - ballRadius < 0) {
         //проверка попадания
-        ballSpeedX = -ballSpeedX;
+        if (ballY > playerY && ballY < playerY + paddleHeight) {
+            ballSpeedX = -ballSpeedX;
+            playerScore++;
+        } else {
+            alert("123");
+        }
     }
 
     // Отражение мяча от правой стенки
