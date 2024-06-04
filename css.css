@@ -17,12 +17,19 @@ td, th {
 } */
 
 body{
-    display: flex;
+    display:grid ;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
     background-color: aqua;
+}
+
+#current-score{
+    margin-bottom: -100px;
+    text-align: center;
+    font-size: larger;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 #container{
