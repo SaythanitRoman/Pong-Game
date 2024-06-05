@@ -17,16 +17,15 @@ td, th {
 } */
 
 body{
-    display:grid ;
-    justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: aqua;
+    background-color: rgb(225 225 225);
+    display:block;
 }
 
 #current-score{
-    margin-bottom: -100px;
+    /* margin-bottom: -100px; */
     text-align: center;
     font-size: larger;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -38,6 +37,7 @@ body{
 
 #pong-game{
     border: 2px solid #000;
+    background-color: rgb(185 185 185);
 }
 
 #controls {
@@ -46,4 +46,5 @@ body{
 
 #scores {
     margin-top: 20px;
+    color:#000;
 }
