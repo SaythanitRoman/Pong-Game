@@ -3,7 +3,6 @@ const context = canvas.getContext('2d');
 const startButton = document.getElementById('start-game');
 const pauseButton = document.getElementById('pause-game');
 const difficultyButtons = document.querySelectorAll('#controls button');
-const resetScoresButton = document.getElementById('reset-scores');
 const colorSchemeSelect = document.getElementById('color-scheme');
 const scoreList = document.getElementById('score-list');
 const currentScore = document.getElementById('current-score');
@@ -12,11 +11,13 @@ let paddleHeight = 100;
 let paddleWidth = 10;
 let ballRadius = 10;
 let playerScore = 0;
-let ballX, ballY, ballSpeedX, ballSpeedY;//Положение и скорость по горизонтали и вертикали
+let ballX, ballY, ballSpeedX, ballSpeedY; //Положение и скорость по горизонтали и вертикали
 let playerY = canvas.height / 2;
 let isGameRunning = false;
 let difficulty = 'medium';
 let isGamePaused = false;
+let paddleColor = '#000';
+let ballColor = '#000'
 
 const colorSchemes = {
     default: {
@@ -54,6 +55,10 @@ const setColorScheme = (scheme) => {
 const setDifficulty = (level) => {
     difficulty = level;
     switch(level) {
+        default:
+            ballSpeedX = 4;
+            ballSpeedY = 4;
+            break;
         case 'easy':
             ballSpeedX = 2;
             ballSpeedY = 2;
