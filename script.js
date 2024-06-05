@@ -55,21 +55,41 @@ const setColorScheme = (scheme) => {
 const setDifficulty = (level) => {
     difficulty = level;
     switch(level) {
-        default:
-            ballSpeedX = 4;
-            ballSpeedY = 4;
-            break;
         case 'easy':
-            ballSpeedX = 2;
-            ballSpeedY = 2;
+            if(ballSpeedX < 0){
+                ballSpeedX = -2;
+            }else{
+                ballSpeedX = 2;
+            }
+            if(ballSpeedY < 0){
+                ballSpeedY = -2;
+            }else{
+                ballSpeedY = 2;
+            }
             break;
         case 'medium':
-            ballSpeedX = 4;
-            ballSpeedY = 4;
+            if(ballSpeedX < 0){
+                ballSpeedX = -4;
+            }else{
+                ballSpeedX = 4;
+            }
+            if(ballSpeedY < 0){
+                ballSpeedY = -4;
+            }else{
+                ballSpeedY = 4;
+            }
             break;
         case 'hard':
-            ballSpeedX = 6;
-            ballSpeedY = 6;
+            if(ballSpeedX < 0){
+                ballSpeedX = -6;
+            }else{
+                ballSpeedX = 6;
+            }
+            if(ballSpeedY < 0){
+                ballSpeedY = -6;
+            }else{
+                ballSpeedY = 6;
+            }
             break;
     }
 };
